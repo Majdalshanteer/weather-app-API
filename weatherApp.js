@@ -69,7 +69,7 @@ humi.textContent=`${humidity } %`;
 windSpeed.textContent=`${(wind*3.6).toFixed(2) } km/h`;
 tempMin.textContent=`${(data.main.temp_min.toFixed(1))}°C`;
 tempMax.textContent=`${(data.main.temp_max.toFixed(1))}°C`;
-pre.textContent=`${(data.main.pressure)}hPa`;
+pre.textContent=`${(data.main.pressure)}mb`;
 weatherIcon.src=iconUrl
 
 });
@@ -137,7 +137,7 @@ humi.textContent=`${humidity } %`;
 windSpeed.textContent=`${(wind*3.6).toFixed(2)} km/h`;
 tempMin.textContent=`${(data.main.temp_min.toFixed(1))}°C`;
 tempMax.textContent=`${(data.main.temp_max.toFixed(1))}°C`;
-pre.textContent=`${(data.main.pressure ) } hPa`;
+pre.textContent=`${(data.main.pressure ) } mb`;
 weatherIcon.src=iconUrl
 
 });
