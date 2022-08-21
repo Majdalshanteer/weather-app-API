@@ -34,7 +34,7 @@ window.addEventListener('load', () => {
     const wind = data.wind.speed;
     const { description, icon } = data.weather[0];
     const percipitation=data.clouds.all
-
+    const iconUrl = `http://openweathermap.org/img/wn/${icon}@2x.png`;
 //......... define elemnts in html page.........
 
 const location=document.getElementById('location')
@@ -48,6 +48,12 @@ const weatherDesc=document.getElementById('weatherDesc')
 const percip= document.getElementById('percipitation')
 const humi=document.getElementById('humidity')
 const windSpeed=document.getElementById('windSpeed')
+const tempMin=document.getElementById('tempMin')
+const tempMax=document.getElementById('tempMax')
+const pre=document.getElementById('pre')
+const weatherIcon =document.getElementById('weatherIcon')
+
+
 
 // ............Change readings depend on your location .........
 
@@ -56,11 +62,15 @@ location.textContent = `${place}`;
 console.log(date)
 dayName.textContent=`${day}`;
 const tempr=document.getElementById('tempC')
-tempr.textContent=`${temp .toFixed(1)} ْC`;
+tempr.textContent=`${temp .toFixed(1)}°C`;
 weatherDesc.textContent=`${description }`;
 percip.textContent=`${percipitation } %`;
 humi.textContent=`${humidity } %`;
 windSpeed.textContent=`${(wind*3.6).toFixed(2) } km/h`;
+tempMin.textContent=`${(data.main.temp_min.toFixed(1))}°C`;
+tempMax.textContent=`${(data.main.temp_max.toFixed(1))}°C`;
+pre.textContent=`${(data.main.pressure)}hPa`;
+weatherIcon.src=iconUrl
 
 });
 });
@@ -94,6 +104,7 @@ document.getElementById("country").addEventListener('change',function(){
     const wind = data.wind.speed;
     const { description, icon } = data.weather[0];
     const percipitation=data.clouds.all
+    const iconUrl = `http://openweathermap.org/img/wn/${icon}@2x.png`;
 
 //...... define elemnts in html page.........
 
@@ -108,8 +119,10 @@ const weatherDesc=document.getElementById('weatherDesc')
 const percip= document.getElementById('percipitation')
 const humi=document.getElementById('humidity')
 const windSpeed=document.getElementById('windSpeed')
-
-
+const tempMin=document.getElementById('tempMin')
+const tempMax=document.getElementById('tempMax')
+const pre=document.getElementById('pre')
+const weatherIcon =document.getElementById('weatherIcon')
 // ............Change readings depend on Countries .........
 
 location.textContent = `${place}`;
@@ -117,13 +130,15 @@ location.textContent = `${place}`;
 console.log(date)
 dayName.textContent=`${day}`;
 const tempr=document.getElementById('tempC')
-tempr.textContent=`${temp .toFixed(1)} ْC`;
+tempr.textContent=`${temp .toFixed(1)}°C`;
 weatherDesc.textContent=`${description }`;
 percip.textContent=`${percipitation } %`;
 humi.textContent=`${humidity } %`;
 windSpeed.textContent=`${(wind*3.6).toFixed(2)} km/h`;
-
-
+tempMin.textContent=`${(data.main.temp_min.toFixed(1))}°C`;
+tempMax.textContent=`${(data.main.temp_max.toFixed(1))}°C`;
+pre.textContent=`${(data.main.pressure ) } hPa`;
+weatherIcon.src=iconUrl
 
 });
 });
