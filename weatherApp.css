@@ -214,7 +214,7 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border: none;
-  border-radius: 5px;
+  border-radius: 15px;
   padding: 10px;
   font-family: 'Montserrat', sans-serif;
   background-image: var(--gradient);
